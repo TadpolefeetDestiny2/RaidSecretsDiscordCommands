@@ -73,7 +73,7 @@
           {{$value = $curBalance}}
           {{$status = "BROKEN INTEGER OVERFLOW, WE DIDNT TOUCH YOUR BALANCE"}}
         {{else}}
-          {{$value = add $curBalance $win}}
+          {{$value = add $curBalance (sub $win $amount)}}
         {{end}}
       {{end}}
       {{ dbSet $.User.ID $key  (str $value) }}
